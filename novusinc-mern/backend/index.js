@@ -1,8 +1,8 @@
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const { protect } = require('./middleware/authMiddleware');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,8 +16,12 @@ app.get('/', (req, res) => {
   res.send('Novus Inc MERN Backend is running!');
 });
 
-// MongoDB Connection (Optional for now, but good to have)
-/*
+// Protected Route Example
+app.get('/api/protected', protect, (req, res) => {
+  res.json({ message: `Welcome ${req.user.email}, you have access to protected data!` });
+});
+
+// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -30,11 +34,8 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 .catch(err => {
   console.error('MongoDB connection error:', err);
-  process.exit(1);
-});
-*/
-
-// Start server without DB connection for now
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  // process.exit(1); // Don't exit immediately, allow server to start without DB if needed for development
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT} (MongoDB connection failed)`);
+  });
 });
