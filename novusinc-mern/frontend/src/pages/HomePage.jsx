@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from 'axios';
 
 function HomePage() {
   const settings = {
@@ -20,11 +21,33 @@ function HomePage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
 
-  const projects = [
-    { id: 1, category: 'first', img: '/img/gym_template1.PNG', title: 'Gym Template', type: 'UI / UX Design', link: 'https://novus-inc-marketplace.github.io/gym_template1' },
-    { id: 2, category: 'second', img: '/img/restaurant_template.PNG', title: 'Restaurant Template 1', type: 'UI / UX Design', link: 'https://novus-inc-marketplace.github.io/restaurant_template' },
-    { id: 3, category: 'first', img: '/img/restaurant_template1.PNG', title: 'Restaurant Template 2', type: 'UI / UX Design', link: 'https://novus-inc-marketplace.github.io/restaurant_template1' },
-  ];
+  const [projects, setProjects] = useState([]);
+  const [services, setServices] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const projectsRes = await axios.get('http://localhost:5000/api/projects');
+        setProjects(projectsRes.data);
+
+        const servicesRes = await axios.get('http://localhost:5000/api/services');
+        setServices(servicesRes.data);
+
+        const testimonialsRes = await axios.get('http://localhost:5000/api/testimonials');
+        setTestimonials(testimonialsRes.data);
+
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const filteredProjects = filter === '*' ? projects : projects.filter(project => project.category === filter);
 
@@ -37,6 +60,9 @@ function HomePage() {
     setLightboxOpen(false);
     setSelectedImage('');
   };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <>
@@ -62,27 +88,15 @@ function HomePage() {
       <div className="container-xxl py-5">
         <div className="container py-5 px-lg-5">
           <div className="grid lg:grid-cols-3 gap-4">
-            <div className="animate-fadeInUp">
-              <div className="feature-item rounded text-center p-4">
-                <i className="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                <h5 className="mb-3">Frontend Development</h5>
-                <p className="m-0">Creating responsive, user-friendly interfaces with modern frameworks. Focus on performance, accessibility, and exceptional user experience.</p>
+            {services.slice(0, 3).map((service, index) => (
+              <div key={index} className="animate-fadeInUp">
+                <div className="feature-item rounded text-center p-4">
+                  <i className={`fa fa-3x ${service.icon} text-primary mb-4`}></i>
+                  <h5 className="mb-3">{service.title}</h5>
+                  <p className="m-0">{service.description}</p>
+                </div>
               </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="feature-item rounded text-center p-4">
-                <i className="fa fa-3x fa-search text-primary mb-4"></i>
-                <h5 className="mb-3">Backend Development</h5>
-                <p className="m-0">Building robust, scalable server-side applications with modern technologies. Focus on security, performance, and API integration.</p>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="feature-item rounded text-center p-4">
-                <i className="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                <h5 className="mb-3">Full Stack Solutions</h5>
-                <p className="m-0">End-to-end web application development combining frontend and backend technologies for complete digital solutions.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -170,66 +184,18 @@ function HomePage() {
             <h1 className="text-center mb-5">Web Development Solutions</h1>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-search fa-2x"></i>
+            {services.map((service, index) => (
+              <div key={index} className="animate-fadeInUp">
+                <div className="service-item flex flex-col text-center rounded">
+                  <div className="service-icon flex-shrink-0">
+                    <i className={`fa fa-2x ${service.icon}`}></i>
+                  </div>
+                  <h5 className="mb-3">{service.title}</h5>
+                  <p className="m-0">{service.description}</p>
+                  <Link className="btn btn-square" to={service.link}><i className="fa fa-arrow-right"></i></Link>
                 </div>
-                <h5 className="mb-3">Frontend Development</h5>
-                <p className="m-0">Creating responsive, user-friendly interfaces with modern frameworks like React, Vue, and Angular. Focus on performance, accessibility, and exceptional user experience.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
               </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-laptop-code fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Backend Development</h5>
-                <p className="m-0">Building robust, scalable server-side applications with Node.js, Python, PHP, and database solutions. Focus on security, performance, and API integration.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fab fa-facebook-f fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Full Stack Development</h5>
-                <p className="m-0">End-to-end web application development combining frontend and backend technologies. Seamless integration between client-side and server-side components.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-mail-bulk fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Responsive Design</h5>
-                <p className="m-0">Creating websites and applications that work seamlessly across all devices. Mobile-first approach ensuring optimal user experience on any screen size.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-thumbs-up fa-2x"></i>
-                </div>
-                <h5 className="mb-3">UI/UX Implementation</h5>
-                <p className="m-0">Transforming design concepts into functional, interactive interfaces. Focus on user-centered design principles and intuitive navigation.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fab fa-android fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Performance Optimization</h5>
-                <p className="m-0">Improving website speed, efficiency, and user experience through code optimization, caching strategies, and modern deployment techniques.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -271,7 +237,7 @@ function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 portfolio-container">
             {filteredProjects.map(project => (
-              <div key={project.id} className={`portfolio-item ${project.category} animate-fadeInUp`}>
+              <div key={project._id} className={`portfolio-item ${project.category} animate-fadeInUp`}>
                 <div className="rounded overflow-hidden">
                   <div className="relative overflow-hidden">
                     <img className="img-fluid w-full" src={project.img} alt="" />
@@ -300,6 +266,29 @@ function HomePage() {
           </div>
         </div>
       )}
+
+      {/* Testimonial Start */}
+      <div className="container-xxl py-5 animate-fadeInUp">
+        <div className="container py-5 px-lg-5">
+          <p className="section-title text-secondary justify-center"><span></span>Testimonial<span></span></p>
+          <h1 className="text-center mb-5">What Say Our Clients!</h1>
+          <Slider {...settings}>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-item bg-light rounded my-4 p-4">
+                <p className="fs-5"><i className="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>{testimonial.quote}</p>
+                <div className="flex items-center mt-3">
+                  <img className="img-fluid flex-shrink-0 rounded-full" src={testimonial.clientImage} style={{ width: '65px', height: '65px' }} alt="" />
+                  <div className="ps-4">
+                    <h5 className="mb-1">{testimonial.clientName}</h5>
+                    <span>{testimonial.clientProfession}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      {/* Testimonial End */}
     </>
   );
 }

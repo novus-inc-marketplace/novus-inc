@@ -4,6 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const { protect } = require('./middleware/authMiddleware');
 
+const projectRoutes = require('./routes/projectRoutes');
+const serviceRoutes = require('./routes/serviceRoutes');
+const testimonialRoutes = require('./routes/testimonialRoutes');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -15,6 +19,11 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Novus Inc MERN Backend is running!');
 });
+
+// API Routes
+app.use('/api/projects', projectRoutes);
+app.use('/api/services', serviceRoutes);
+app.use('/api/testimonials', testimonialRoutes);
 
 // Protected Route Example
 app.get('/api/protected', protect, (req, res) => {
