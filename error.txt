@@ -1,0 +1,2 @@
+4:36:59 PM [vite] (client) Pre-transform error: Failed to load url /src/main.jsx (resolved id: /src/main.jsx). Does the file exist?
+4:37:15 PM [vite] (client) Pre-transform error: Failed to load url /src/main.jsx (resolved id: /src/main.jsx). Does the file exist? (x2
