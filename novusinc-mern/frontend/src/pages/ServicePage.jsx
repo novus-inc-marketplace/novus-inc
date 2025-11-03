@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from 'axios';
 
 function ServicePage() {
   const settings = {
@@ -15,6 +16,28 @@ function ServicePage() {
     autoplaySpeed: 3000,
     arrows: false,
   };
+
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/services');
+        setServices(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  if (loading) return <div>Loading services...</div>;
+  if (error) return <div>Error loading services: {error}</div>;
 
   return (
     <>
@@ -46,66 +69,18 @@ function ServicePage() {
             <h1 className="text-center mb-5">What Solutions We Provide</h1>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-search fa-2x"></i>
+            {services.map((service, index) => (
+              <div key={service._id || index} className="animate-fadeInUp">
+                <div className="service-item flex flex-col text-center rounded">
+                  <div className="service-icon flex-shrink-0">
+                    <i className={`fa fa-2x ${service.icon}`}></i>
+                  </div>
+                  <h5 className="mb-3">{service.title}</h5>
+                  <p className="m-0">{service.description}</p>
+                  <Link className="btn btn-square" to={service.link}><i className="fa fa-arrow-right"></i></Link>
                 </div>
-                <h5 className="mb-3">SEO Optimization</h5>
-                <p className="m-0">Boost your visibility and attract the right audience with smart SEO strategies designed to put your brand exactly where it matters—on top</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
               </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-laptop-code fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Web Design</h5>
-                <p className="m-0">Crafting sleek, user-friendly websites that not only look stunning but also convert visitors into loyal customers.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fab fa-facebook-f fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Social Media Marketing</h5>
-                <p className="m-0">Turn your social presence into real business growth with engaging campaigns that spark conversations and build community.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-mail-bulk fa-2x"></i>
-                </div>
-                <h5 className="mb-3">Email Marketing</h5>
-                <p className="m-0">Deliver the right message at the right time—personalized email campaigns that nurture trust and drive sales</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fa fa-thumbs-up fa-2x"></i>
-                </div>
-                <h5 className="mb-3">PPC Advertising</h5>
-                <p className="m-0">Maximize ROI with data-driven ads that target the right people, at the right moment, for instant visibility and results.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
-            <div className="animate-fadeInUp">
-              <div className="service-item flex flex-col text-center rounded">
-                <div className="service-icon flex-shrink-0">
-                  <i className="fab fa-android fa-2x"></i>
-                </div>
-                <h5 className="mb-3">App Development</h5>
-                <p className="m-0">Transforming ideas into powerful, intuitive apps that connect with users and bring your vision to life.</p>
-                <Link className="btn btn-square" to="/contact"><i className="fa fa-arrow-right"></i></Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
