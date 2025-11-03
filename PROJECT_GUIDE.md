@@ -46,7 +46,7 @@ All the text and content of the website are located in the `.html` files. To cha
 For example, to change the main headline on the homepage, open `index.html` and find the following line:
 
 ```html
-<h1 class="text-white mb-4 animated slideInDown">Novus Inc - Ideas Into Action</h1>
+<h1 class="text-white mb-4 animated slideInDown">Novus Inc - Ideas Into Reality</h1>
 ```
 
 Replace the text with your desired headline.

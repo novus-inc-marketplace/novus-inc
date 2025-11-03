@@ -1,0 +1,23 @@
+I have two projects:
+
+Novus Inc Project – this is my main project whose contents, structure, and functionality must remain the same.
+
+AcademyLandingPage Directory – this project has a different development stack and styling that I want to adopt for the Novus Inc project.
+
+Your task is to:
+
+Investigate both projects thoroughly — analyze the frameworks, libraries, folder structures, and technologies used in each.
+
+Identify the development stack and style system used in academylandingpage (for example, Next.js, TailwindCSS, TypeScript, etc.).
+
+Compare it with the current Novus Inc project stack and document the differences.
+
+Plan a migration strategy that keeps all the content, layout hierarchy, and features of Novus Inc exactly the same, but rebuilds it using the same stack and visual style as academylandingpage.
+
+Outline what needs to change — dependencies, build system, folder structure, component design, CSS framework, etc.
+
+Explain what can be reused and what will need to be refactored or rewritten.
+
+Deliver a migration roadmap — step-by-step guide to refactor or rebuild Novus Inc with the academylandingpage tech stack and design style, without altering its functional or textual content.
+
+Keep the content identical, only the tech stack and visual design system should change to match
