@@ -8,11 +8,11 @@ Give every section (Home, About, Service, Project, Contact) a modern, premium lo
 
 Maintain fast loading by using lazy loading, compressed assets, and optimized animations.
 
-Apply a refined color scheme and typography consistent with our slogan “Ideas Into Action” — bold, clean, and innovative.
+Apply a refined color scheme and typography consistent with our slogan “Ideas Into Reality” — bold, clean, and innovative.
 
 Brand Message
 
-Create a short, emotionally engaging description for the hero section using the slogan “Ideas Into Action.”
+Create a short, emotionally engaging description for the hero section using the slogan “Ideas Into Reality.”
 
 Explain in one paragraph why we are good at what we do, how we do it, and what we sell (services), in a tone that adds value and sparks emotion.
 
