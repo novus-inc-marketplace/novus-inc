@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { protect } = require('./middleware/authMiddleware');
 
 const projectRoutes = require('./routes/projectRoutes');
 const serviceRoutes = require('./routes/serviceRoutes');
@@ -10,7 +9,6 @@ const testimonialRoutes = require('./routes/testimonialRoutes');
 const teamRoutes = require('./routes/teamRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const newsletterRoutes = require('./routes/newsletterRoutes');
-const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -31,12 +29,6 @@ app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/team', teamRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/newsletter', newsletterRoutes);
-app.use('/api/auth', authRoutes);
-
-// Protected Route Example
-app.get('/api/protected', protect, (req, res) => {
-  res.json({ message: `Welcome ${req.user.email}, you have access to protected data!` });
-});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
