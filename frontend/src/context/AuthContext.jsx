@@ -1,46 +1,58 @@
 import React, { useContext, useState, useEffect, createContext } from 'react';
-import { supabase } from '../services/supabaseClient';
+import axios from 'axios';
 
 const AuthContext = createContext();
+
+const API_URL = 'http://localhost:5000/api/auth/'; // Assuming backend runs on 5000
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setUser(session?.user || null);
-        setLoading(false);
+    const checkUser = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const response = await axios.get(API_URL + 'me', {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setUser(response.data);
+        } catch (error) {
+          console.error('Token validation failed:', error);
+          localStorage.removeItem('token');
+          setUser(null);
+        }
       }
-    );
-
-    // Check initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user || null);
       setLoading(false);
-    });
-
-    return () => {
-      authListener.subscription.unsubscribe();
     };
+
+    checkUser();
   }, []);
 
   const signIn = async (email, password) => {
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) throw error;
-    return data;
+    const response = await axios.post(API_URL + 'login', { email, password });
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+      setUser(response.data);
+    }
+    return response.data;
   };
 
   const signUp = async (email, password) => {
-    const { data, error } = await supabase.auth.signUp({ email, password });
-    if (error) throw error;
-    return data;
+    const response = await axios.post(API_URL + 'register', { email, password });
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+      setUser(response.data);
+    }
+    return response.data;
   };
 
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) throw error;
+  const signOut = () => {
+    localStorage.removeItem('token');
+    setUser(null);
   };
 
   const value = { user, loading, signIn, signUp, signOut };
