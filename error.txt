@@ -1,336 +1,37 @@
-(!) Failed to run dependency scan. Skipping dependency pre-bundling. Error: The following dependencies are imported but could not be resolved:
+  VITE v7.1.12  ready in 685 ms
 
-  axios (imported by C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/HomePage.jsx)
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+8:44:57 PM [vite] Internal server error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/index.css:undefined:NaN
+      at ot (C:\Users\anson\Desktop\git\novusinc\frontend\node_modules\tailwindcss\dist\lib.js:38:1629)
+      at LazyResult.runOnRoot (C:\Users\anson\Desktop\git\novusinc\frontend\node_modules\postcss\lib\lazy-result.js:361:16)
+      at LazyResult.runAsync (C:\Users\anson\Desktop\git\novusinc\frontend\node_modules\postcss\lib\lazy-result.js:290:26)
+      at LazyResult.async (C:\Users\anson\Desktop\git\novusinc\frontend\node_modules\postcss\lib\lazy-result.js:192:30)
+      at LazyResult.then (C:\Users\anson\Desktop\git\novusinc\frontend\node_modules\postcss\lib\lazy-result.js:436:17)
+8:44:57 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/index.css:undefined:NaN
+8:44:58 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/slick-carousel/slick/slick.css:undefined:NaN
+8:44:58 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/slick-carousel/slick/slick.css:undefined:NaN (x2)
+8:44:58 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/slick-carousel/slick/slick.css:undefined:NaN (x3)
+8:44:58 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/slick-carousel/slick/slick-theme.css:undefined:NaN
+8:44:58 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/slick-carousel/slick/slick-theme.css:undefined:NaN (x2)
+8:44:58 PM [vite] (client) Pre-transform error: [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+  Plugin: vite:css
+  File: C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/slick-carousel/slick/slick-theme.css:undefined:NaN (x3)
 
-Are they installed?
-    at file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:10888:33
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-    at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:34336:15
-8:35:40 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/HomePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/HomePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  import CounterUp from "../components/CounterUp";
-  10 |  function HomePage() {
-8:35:41 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/TestimonialPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TestimonialPage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function TestimonialPage() {
-  10 |    _s();
-8:35:41 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/ContactPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ContactPage.jsx:3:18
-  3  |  import React, { useState } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ContactPage() {
-  7  |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:41 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/ContactPage.jsx". Does the file exist?        
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ContactPage.jsx:3:18
-  3  |  import React, { useState } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ContactPage() {
-  7  |    _s();
-8:35:41 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/TeamPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TeamPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function TeamPage() {
-  7  |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)
-8:35:41 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/TeamPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TeamPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function TeamPage() {
-  7  |    _s();
-8:35:42 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/ProjectPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ProjectPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ProjectPage() {
-  7  |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)
-8:35:42 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/ProjectPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ProjectPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ProjectPage() {
-  7  |    _s();
-8:35:42 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/ServicePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ServicePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function ServicePage() {
-  10 |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 6)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:42 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/ServicePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ServicePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function ServicePage() {
-  10 |    _s();
-8:35:42 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/HomePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/HomePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  import CounterUp from "../components/CounterUp";
-  10 |  function HomePage() {
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 6)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-      at async viteTransformMiddleware (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:27118:20)
-8:35:42 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/TestimonialPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TestimonialPage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function TestimonialPage() {
-  10 |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 6)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-      at async viteTransformMiddleware (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:27118:20)
-8:35:46 PM [vite] (client) ✨ new dependencies optimized: react-dom/client, react-router-dom, react-slick
-8:35:46 PM [vite] (client) ✨ optimized dependencies changed. reloading
-8:35:49 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/HomePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/HomePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  import CounterUp from "../components/CounterUp";
-  10 |  function HomePage() {
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 6)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:49 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/HomePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/HomePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  import CounterUp from "../components/CounterUp";
-  10 |  function HomePage() {
-8:35:49 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/ProjectPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ProjectPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ProjectPage() {
-  7  |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:49 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/TestimonialPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TestimonialPage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function TestimonialPage() {
-  10 |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 6)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:49 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/ProjectPage.jsx". Does the file exist?        
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ProjectPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ProjectPage() {
-  7  |    _s();
-8:35:49 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/TestimonialPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TestimonialPage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function TestimonialPage() {
-  10 |    _s();
-8:35:49 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/ServicePage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ServicePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function ServicePage() {
-  10 |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 6)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:49 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/ServicePage.jsx". Does the file exist?        
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ServicePage.jsx:6:18
-  6  |  import "slick-carousel/slick/slick.css";
-  7  |  import "slick-carousel/slick/slick-theme.css";
-  8  |  import axios from "axios";
-     |                     ^
-  9  |  function ServicePage() {
-  10 |    _s();
-8:35:49 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/TeamPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TeamPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function TeamPage() {
-  7  |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:49 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/TeamPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/TeamPage.jsx:3:18
-  3  |  import React, { useState, useEffect } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function TeamPage() {
-  7  |    _s();
-8:35:49 PM [vite] Internal server error: Failed to resolve import "axios" from "src/pages/ContactPage.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ContactPage.jsx:3:18
-  3  |  import React, { useState } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ContactPage() {
-  7  |    _s();
-      at TransformPluginContext._formatLog (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31106:43)
-      at TransformPluginContext.error (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:31103:14)
-      at normalizeUrl (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29590:18)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29648:32
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:29616:4)
-      at async EnvironmentPluginContainer.transform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:30905:14)
-      at async loadAndTransform (file:///C:/Users/anson/Desktop/git/novusinc/frontend/node_modules/vite/dist/node/chunks/config.js:26043:26)   
-8:35:49 PM [vite] (client) Pre-transform error: Failed to resolve import "axios" from "src/pages/ContactPage.jsx". Does the file exist?        
-  Plugin: vite:import-analysis
-  File: C:/Users/anson/Desktop/git/novusinc/frontend/src/pages/ContactPage.jsx:3:18
-  3  |  import React, { useState } from "react";
-  4  |  import { Link } from "react-router-dom";
-  5  |  import axios from "axios";
-     |                     ^
-  6  |  function ContactPage() {
-  7  |    _s();
+
+
